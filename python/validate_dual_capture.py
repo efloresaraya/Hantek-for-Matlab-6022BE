@@ -15,14 +15,18 @@ def normalize_header(header: str) -> str:
 
 
 def latest_dual_csv(project_root: Path) -> Path:
-    patterns = [
-        str(project_root / "data" / "processed" / "hantek_dual_*.csv"),
+    processed = [
+        path
+        for path in glob.glob(str(project_root / "data" / "processed" / "hantek_dual_*.csv"))
+        if not Path(path).stem.endswith("_raw")
+    ]
+    raw = []
+    for pattern in [
         str(project_root / "data" / "raw" / "dual_diag_*.csv"),
         str(project_root / "data" / "raw" / "dual_ch1_ch2_*.csv"),
-    ]
-    matches: list[str] = []
-    for pattern in patterns:
-        matches.extend(glob.glob(pattern))
+    ]:
+        raw.extend(glob.glob(pattern))
+    matches = processed or raw
     if not matches:
         raise FileNotFoundError("No dual CSV capture found in data/processed or data/raw")
     return Path(max(matches, key=lambda item: Path(item).stat().st_mtime))

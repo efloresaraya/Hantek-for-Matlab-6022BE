@@ -4,6 +4,8 @@ data/processed/
 data/logs/
 
 # Excepción: conservar la calibración de software
+!data/examples/
+!data/examples/**
 !data/software_calibration.json
 
 # Vendored — código de terceros ya publicado
@@ -23,6 +25,9 @@ python/__pycache__/
 *.m~
 slprj/
 matlab/private/
+
+# Claude Code session data
+.claude/
 
 # macOS
 .DS_Store
