@@ -1,0 +1,35 @@
+# Datos generados — no versionar
+data/raw/
+data/processed/
+data/logs/
+
+# Excepción: conservar la calibración de software
+!data/software_calibration.json
+
+# Vendored — código de terceros ya publicado
+OpenHantek6022/
+
+# Python
+python/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env/
+*.egg-info/
+
+# MATLAB
+*.asv
+*.m~
+slprj/
+matlab/private/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo

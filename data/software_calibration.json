@@ -1,0 +1,32 @@
+{
+  "schema": "hantek6022be-software-calibration-v1",
+  "updated_at": "2026-04-26T14:40:48-04:00",
+  "source": "matlab/main_v8_calibration_check.m",
+  "notes": "Software-only display/analysis correction. No EEPROM write is performed.",
+  "channels": {
+    "ch1": {
+      "enabled": true,
+      "gain": 0.95192308,
+      "offset_v": -0.11538462,
+      "expected_low_v": 0.0,
+      "expected_high_v": 2.0,
+      "measured_low_v": 0.12121212,
+      "measured_high_v": 2.2222222,
+      "measured_vpp_v": 2.1010101,
+      "measured_frequency_hz": 1000.0,
+      "source_summary": "data/processed/calibration_check_ch1_20260426_144043_summary.txt"
+    },
+    "ch2": {
+      "enabled": true,
+      "gain": 0.97058824,
+      "offset_v": -0.19607843,
+      "expected_low_v": 0.0,
+      "expected_high_v": 2.0,
+      "measured_low_v": 0.2020202,
+      "measured_high_v": 2.2626263,
+      "measured_vpp_v": 2.0606061,
+      "measured_frequency_hz": 1000.0,
+      "source_summary": "data/processed/calibration_check_ch2_20260426_144048_summary.txt"
+    }
+  }
+}

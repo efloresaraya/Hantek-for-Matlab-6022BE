@@ -1,0 +1,11 @@
+name: hantek6022be-matlab
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib
+  - libusb
+  - pip
+  - pip:
+      - -r requirements.txt
